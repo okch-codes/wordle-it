@@ -23,6 +23,12 @@ jobs:
       - name: Build
         run: yarn build
         working-directory: './create-a-wordle-like-game'
+      - name: Archive build
+        if: success()
+        uses: actions/upload-artifact@v1
+        with:
+          name: deploy_dist
+          path: dist
   deploy:
     runs-on: ubuntu-latest
     needs: build
