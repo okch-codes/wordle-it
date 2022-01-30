@@ -22,6 +22,7 @@ jobs:
         working-directory: './create-a-wordle-like-game'
       - name: Build
         run: yarn build
+        working-directory: './create-a-wordle-like-game'
       - name: Archive build
         if: success()
         uses: actions/upload-artifact@v1
