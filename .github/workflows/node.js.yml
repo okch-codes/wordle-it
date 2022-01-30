@@ -8,19 +8,18 @@ on:
 
 jobs:
   build:
-    name: Test
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node 12.x
+        uses: actions/setup-node@v1
         with:
-          cmd: install # will run `yarn install` command
-          working-directory: ./create-a-wordle-like-game
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build # will run `yarn build` command
-          working-directory: ./create-a-wordle-like-game
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: test # will run `yarn test` command
-          working-directory: ./create-a-wordle-like-game
+          node-version: '12.x'
+      - name: Install dependencies
+        run: yarn install
+        working-directory: './create-a-wordle-like-game'
+      - name: Build
+        run: yarn build
+        working-directory: './create-a-wordle-like-game'
