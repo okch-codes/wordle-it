@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: deploy_dist
-          path: create-a-wordle-like-game/dist
+          path: create-a-wordle-like-game/dist/wordle
   deploy:
     runs-on: ubuntu-latest
     needs: build
