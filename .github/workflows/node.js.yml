@@ -44,4 +44,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: deploy_dist/wordle-it/create-a-wordle-like-game
+          FOLDER: deploy_dist/wordle-it
