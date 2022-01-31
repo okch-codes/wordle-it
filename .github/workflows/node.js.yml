@@ -22,7 +22,7 @@ jobs:
         run: yarn install
         working-directory: './create-a-wordle-like-game'
       - name: Build
-        run: yarn build
+        run: yarn build --base-href wordle-it
         working-directory: './create-a-wordle-like-game'
       - name: Archive build
         if: success()
@@ -45,4 +45,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: create-a-wordle-like-game
+          FOLDER: create-a-wordle-like-game/dist/wordle
