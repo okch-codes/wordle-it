@@ -22,7 +22,7 @@ jobs:
         run: yarn install
         working-directory: './create-a-wordle-like-game'
       - name: Build
-        run: yarn build --base-href wordle-it
+        run: yarn build --base-href /wordle-it
         working-directory: './create-a-wordle-like-game'
       - name: Archive build
         if: success()
