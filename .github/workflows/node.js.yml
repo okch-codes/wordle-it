@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: '12.x'
       - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
         working-directory: './create-a-wordle-like-game'
       - name: Build
